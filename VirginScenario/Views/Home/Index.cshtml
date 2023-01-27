@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Scenario List";   
+}
+    <h2>Scenario List</h2>
+
+    @foreach (var scenario in Model)
+    {
+  
+    <details>
+        <summary>Scenario Name : @scenario.ScenarioName </summary>
+        @*Custom CSS can be added for formatting the table  with styles *@
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Forename</th>
+                    <th>Surname</th>
+                    <th>UserId</th>
+                    <th>Sample Date</th>
+                    <th>Creation Date</th>
+                    <th>Months</th>
+                    <th>Mkt Id</th>
+                    <th>Net Id</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in @scenario.Detail)
+                {
+                      <tr>
+                        <td>@detail.Forename</td>
+                        <td>@detail.Surname</td>
+                        <th>@detail.UserId</th>
+                        <th>@detail.SampleDate</th>
+                        <th>@detail.CreationDate</th>
+                        <th>@detail.NumMonths</th>
+                        <th>@detail.MarketId</th>
+                        <th>@detail.NetworkLayerId</th>
+                    </tr>
+                }
+                 
+                
+            </tbody>
+        </table>
+    </details>
+    }
+  
+
